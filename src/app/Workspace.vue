@@ -27,11 +27,11 @@
         <!--TwBgPaletteDefault/-->
 
         <strong :class="tw.heading">
-            twBgPaletteDefault.console.colors values
+            twBgPaletteDefault.default.colors values
         </strong>
 
         <div :class="tw.flex">
-            <span :class="tw.span" v-for="(color, index) in twBgPaletteDefault.console.colors">
+            <span :class="tw.span" v-for="(color, index) in twBgPaletteDefault.default.colors">
                 <div :class="tw.mark" :key="index">
                     "{{ index }}" : "{{ color }}"
                 </div>
