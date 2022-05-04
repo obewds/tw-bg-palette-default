@@ -1,23 +1,22 @@
 {
-  "name": "@obewds/vite-vue-ts-compo-pkg-starter",
-  "description": "The @obewds/vite-vue-ts-compo-pkg-starter modular design system component for Vue.js",
-  "version": "0.1.0",
+  "name": "@obewds/tw-bg-palette-default",
+  "description": "The @obewds/tw-bg-palette-default modular design system component for Vue.js",
+  "version": "1.0.0",
   "author": "@oberocks",
-  "homepage": "https://obewds.github.io/vite-vue-ts-compo-pkg-starter/",
+  "homepage": "https://obewds.github.io/tw-bg-palette-default/",
   "license": "MIT",
-  "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
-  "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
-  "browser": "./dist/vite-vue-ts-compo-pkg-starter.iife.js",
+  "main": "./dist/tw-bg-palette-default.umd.js",
+  "module": "./dist/tw-bg-palette-default.es.js",
+  "browser": "./dist/tw-bg-palette-default.iife.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
-      "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js"
-    },
-    "./src": "./src/components/ViteVueTsCompoPkgStarter.vue"
+      "import": "./dist/tw-bg-palette-default.es.js",
+      "require": "./dist/tw-bg-palette-default.umd.js"
+    }
   },
   "files": [
     "dist",
-    "src/components",
+    "src/data",
     "tests"
   ],
   "types": "./dist/types/index.d.ts",
@@ -37,9 +36,7 @@
     "pkg:login": "npm adduser",
     "pkg:publish": "npm publish --access public",
     "publish:prep": "npx rimraf dist && npm run pkg:tsbundle",
-    "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish",
-    "init:as": "node scripts/init.js",
-    "delete:init:as": "npx rimraf scripts/init.js"
+    "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish"
   },
   "peerDependencies": {
     "vue": "^3.2.33"
@@ -52,7 +49,7 @@
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/node": "^17.0.31",
-    "@vitejs/plugin-vue": "^2.3.1",
+    "@vitejs/plugin-vue": "^2.3.2",
     "@vue/test-utils": "^2.0.0-rc.20",
     "autoprefixer": "^10.4.7",
     "c8": "^7.11.0",
@@ -62,7 +59,7 @@
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4",
-    "vite": "^2.9.7",
+    "vite": "^2.9.8",
     "vitepress": "^0.22.3",
     "vitest": "^0.10.2",
     "vue": "^3.2.33",
@@ -70,10 +67,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/obewds/vite-vue-ts-compo-pkg-starter.git"
+    "url": "git+https://github.com/obewds/tw-bg-palette-default.git"
   },
   "bugs": {
-    "url": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter/issues"
+    "url": "https://github.com/obewds/tw-bg-palette-default/issues"
   },
   "keywords": [
     "vue",
