@@ -12,17 +12,17 @@ test('twBgPaletteDefault component returns a truthy value', async () => {
 
 
 
-test('twBgPaletteDefault.console component returns an object with a truthy console property', async () => {
+test('twBgPaletteDefault.default component returns an object with a truthy default property', async () => {
 
-    expect(twBgPaletteDefault.console).toBeTruthy()
+    expect(twBgPaletteDefault.default).toBeTruthy()
 
 })
 
 
 
-test('twBgPaletteDefault.console.colors component returns an object with a truthy colors property', async () => {
+test('twBgPaletteDefault.default.colors component returns an object with a truthy colors property', async () => {
 
-    expect(twBgPaletteDefault.console.colors).toBeTruthy()
+    expect(twBgPaletteDefault.default.colors).toBeTruthy()
 
 })
 
@@ -30,10 +30,10 @@ test('twBgPaletteDefault.console.colors component returns an object with a truth
 
 test('twBgPaletteDefault component returns an object with the standard five default color names', async () => {
 
-    expect(twBgPaletteDefault.console.colors['default']).toBeTruthy()
-    expect(twBgPaletteDefault.console.colors['error']).toBeTruthy()
-    expect(twBgPaletteDefault.console.colors['primary']).toBeTruthy()
-    expect(twBgPaletteDefault.console.colors['secondary']).toBeTruthy()
-    expect(twBgPaletteDefault.console.colors['success']).toBeTruthy()
+    expect(twBgPaletteDefault.default.colors['default']).toBe('')
+    expect(twBgPaletteDefault.default.colors['error']).toBeTruthy()
+    expect(twBgPaletteDefault.default.colors['primary']).toBeTruthy()
+    expect(twBgPaletteDefault.default.colors['secondary']).toBeTruthy()
+    expect(twBgPaletteDefault.default.colors['success']).toBeTruthy()
 
 })

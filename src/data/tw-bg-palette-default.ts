@@ -7,7 +7,7 @@ interface DefaultTwBgPaletteInterface {
 }
 
 export default <DefaultTwBgPaletteInterface>{
-    'console': {
+    'default': {
         colors: {
             'default': '',
             'error': 'text-white bg-rose-500 dark:bg-rose-600',
