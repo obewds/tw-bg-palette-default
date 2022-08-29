@@ -24,10 +24,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - id: publish
-      - if: steps.publish.outputs.old-version != steps.publish.outputs.version
-        run: npm install && npm run pkg:org && npm run git:tag
         uses: JS-DevTools/npm-publish@v1
         with:
           access: "public"
           tag: ${{ steps.publish.outputs.version }}
           token: ${{ secrets.NPM_GITHUB_OBEWDS_AUTOMATION_AUTH_TOKEN }}
+      - if: steps.publish.outputs.old-version != steps.publish.outputs.version
+        run: npm install && npm run pkg:org && npm run git:tag
