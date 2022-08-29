@@ -11,18 +11,20 @@ on:
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true && steps.publish.outputs.old-version !== steps.publish.outputs.version
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      - id: publish
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+        if: steps.publish.outputs.old-version !== steps.publish.outputs.version
       - run: npm install
       # - run: npm run test
       - run: npm run pkg:org
