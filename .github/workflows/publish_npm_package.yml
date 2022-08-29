@@ -11,7 +11,7 @@ on:
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && steps.publish.outputs.old-version !== steps.publish.outputs.version
     runs-on: ubuntu-latest
     strategy:
       matrix:
