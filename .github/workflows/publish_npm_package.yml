@@ -2,7 +2,7 @@
 
 # For more information see: https://github.com/marketplace/actions/npm-publish
 
-name: Node.js CI Vitest Run Tests
+name: Node.js CI NPM Publish Package
 
 on:
   pull_request:
