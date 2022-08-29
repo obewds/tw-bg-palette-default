@@ -18,19 +18,25 @@ jobs:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      - id: publish
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        if: steps.publish.outputs.old-version != steps.publish.outputs.version
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm install
+      # - run: npm install
       # - run: npm run test
-      - run: npm run pkg:org
-      - run: npm run git:tag
-      - uses: JS-DevTools/npm-publish@v1
+      # - run: npm run pkg:org
+      # - run: npm run git:tag
+      # - uses: JS-DevTools/npm-publish@v1
+        # with:
+          # access: "public"
+          # tag: ${{ steps.publish.outputs.version }}
+          # token: ${{ secrets.NPM_GITHUB_OBEWDS_AUTOMATION_AUTH_TOKEN }}
+      - id: publish
+        uses: JS-DevTools/npm-publish@v1
         with:
           access: "public"
           tag: ${{ steps.publish.outputs.version }}
           token: ${{ secrets.NPM_GITHUB_OBEWDS_AUTOMATION_AUTH_TOKEN }}
+      - if: steps.publish.outputs.old-version != steps.publish.outputs.version
+        run: npm install && npm run pkg:org && npm run git:tag
