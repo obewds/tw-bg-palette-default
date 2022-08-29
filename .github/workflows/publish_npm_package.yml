@@ -21,10 +21,10 @@ jobs:
       - id: publish
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        if: steps.publish.outputs.old-version != steps.publish.outputs.version
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-        if: steps.publish.outputs.old-version !== steps.publish.outputs.version
       - run: npm install
       # - run: npm run test
       - run: npm run pkg:org
